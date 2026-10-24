@@ -20,9 +20,9 @@ AUTHOR
 
 Joel Roth <joelz@pobox.com>
 
+Copyright (C) 2026 Joel Roth. 
+
 LICENSE
 
-Copyright (C) 2026 Joel Roth. May be modified or
-distributed using the same terms as the Perl language
-itself.
-
+This is free software; you may redistribute it and/or modify it under
+the same terms as Perl itself. see LICENSE.
