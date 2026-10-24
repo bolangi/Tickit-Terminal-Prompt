@@ -8,7 +8,7 @@ use Tickit::Widget::Entry;
 use Tickit::Widget::Scroller;
 use Tickit::Widget::Scroller::Item::Text;
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 # A scroller item reserves one line for an Entry in a floating child window.
 {
@@ -254,8 +254,9 @@ $ui->run;
 
 A shell-like terminal interface with a command prompt and a
 scrolling output. The command line allows editing using
-Backspace, Left, Home, Ctrl-A, Ctrl-K, Ctrl-U and Ctrl-W as
-in ReadLine. Ctrl-C stops the interface. 
+Backspace, Left, Home, Ctrl-A, Ctrl-E, Ctrl-H, Ctrl-K,
+Ctrl-U and Ctrl-W as in ReadLine. Ctrl-C stops the
+interface. 
 
 The application supplies a callback that receives the
 command text when the user presses Enter.
