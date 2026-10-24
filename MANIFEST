@@ -4,7 +4,9 @@ LICENSE
 MANIFEST
 META.json
 META.yml
+Makefile.PL
 README
+Tickit-Terminal-Prompt-0.002.tar.gz
 examples/demo.pl
 lib/Tickit/Terminal/Prompt.pm
 t/00-load.t
