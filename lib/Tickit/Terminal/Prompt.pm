@@ -240,18 +240,29 @@ Tickit::Terminal::Prompt - a scrolling terminal command prompt
 
 =head1 SYNOPSIS
 
-  my $ui = Tickit::Terminal::Prompt->new(
-      prompt => 'demo> ',
-      on_enter => sub ($ui, $line) { $ui->say("Input: $line") },
-  );
-  $ui->run;
+my $ui = Tickit::Terminal::Prompt->new(
+    prompt => 'demo> ',
+    on_enter => sub ($ui, $line) {
+        $ui->say("You entered: $line");
+        $ui->stop if $line eq 'quit';
+    },
+);
+$ui->run;
 
 =head1 DESCRIPTION
 
-Displays output in a scroller and a command entry on the next line. The
-callback receives the console object and the entered text without its prompt.
-The application decides how to interpret that text. The constructor owns an
-IO::Async loop and a Tickit::Async instance; call C<run> to start the UI.
+
+A shell-like terminal interface with a command prompt and a
+scrolling output. The command line allows editing using
+Backspace, Left, Home, Ctrl-A, Ctrl-K, Ctrl-U, Ctrl-W as in
+ReadLine. Ctrl-C stops the interface. 
+
+The application supplies a callback that receives the
+command text when the user presses Enter.
+
+With a small amount of additional code this library can be
+used to build a command processor for terminal applications,
+or an actual unix shell. 
 
 =head1 METHODS
 
