@@ -293,6 +293,9 @@ Joel Roth <joelz@pobox.com>
 
 =head1 LICENSE
 
-Copyright (C) 2026 Joel Roth. Distributed under the Artistic License 2.0.
+Copyright (C) 2026 Joel Roth. 
+
+This is free software; you may redistribute it and/or modify it under
+the same terms as Perl itself. 
 
 =cut
