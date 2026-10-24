@@ -2,52 +2,27 @@ NAME
 
     Tickit::Terminal::Prompt - a scrolling terminal command prompt
 
-SYNOPSIS
-
-      my $ui = Tickit::Terminal::Prompt->new(
-          prompt => 'demo> ',
-          on_enter => sub ($ui, $line) { $ui->say("Input: $line") },
-      );
-      $ui->run;
-
 DESCRIPTION
 
-    Displays output in a scroller and a command entry on the next line. The
-    callback receives the console object and the entered text without its
-    prompt. The application decides how to interpret that text. The
-    constructor owns an IO::Async loop and a Tickit::Async instance; call
-    run to start the UI.
+A shell-like terminal interface with a command prompt and a
+scrolling output. The command line allows editing using
+Backspace, Left, Home, Ctrl-A, Ctrl-K, Ctrl-U and Ctrl-W as 
+in ReadLine. Ctrl-C stops the interface.
+        
+The application supplies a callback that receives the
+command text when the user presses Enter.
 
-METHODS
-
- new
-
-    Requires on_enter => sub ($ui, $line) { ... }. The optional prompt
-    defaults to >. Prompts must fit on one line.
-
- print, say
-
-    Append text to the scroller. say adds a newline. Calls to print without
-    a newline continue the current output line.
-
- set_prompt
-
-    Replace the prompt while retaining any command currently being edited.
-
- run, stop
-
-    Start or stop the event loop. stop scrolls to the bottom, lets the
-    final redraw complete, and places the terminal cursor on the bottom row
-    before stopping. After Tickit restores the terminal, run flushes and
-    prints a newline so the shell prompt appears on the next line. Ctrl-C
-    calls stop.
+With a small amount of additional code this library can be
+used to build a command processor for terminal applications,
+or an actual unix shell.  
 
 AUTHOR
 
-    Joel Roth <joelz@pobox.com>
+Joel Roth <joelz@pobox.com>
 
 LICENSE
 
-    Copyright (C) 2026 Joel Roth. Distributed under the Artistic License
-    2.0.
+Copyright (C) 2026 Joel Roth. May be modified or
+distributed using the same terms as the Perl language
+itself.
 
