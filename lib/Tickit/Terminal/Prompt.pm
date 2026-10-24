@@ -254,8 +254,8 @@ $ui->run;
 
 A shell-like terminal interface with a command prompt and a
 scrolling output. The command line allows editing using
-Backspace, Left, Home, Ctrl-A, Ctrl-K, Ctrl-U, Ctrl-W as in
-ReadLine. Ctrl-C stops the interface. 
+Backspace, Left, Home, Ctrl-A, Ctrl-K, Ctrl-U and Ctrl-W as
+in ReadLine. Ctrl-C stops the interface. 
 
 The application supplies a callback that receives the
 command text when the user presses Enter.
